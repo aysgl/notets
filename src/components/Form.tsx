@@ -53,7 +53,7 @@ const Form = ({
             Tags
           </label>
           <Tags
-            aTags={aTags}
+            aTags={tags}
             selected={selected}
             setSelected={setSelected}
             createTag={createTag}
