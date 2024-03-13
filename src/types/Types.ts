@@ -32,7 +32,6 @@ export type Tag = {
     createTag: (tag: Tag) => void;
     selected: Tag[];
     setSelected: (tag: Tag[]) => void;
-    onCreateOption: boolean
   };
 
 export type MainPage = {

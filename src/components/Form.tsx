@@ -32,8 +32,7 @@ const Form = ({
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
             htmlFor="grid-title"
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          >
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
             Title
           </label>
           <input
@@ -48,16 +47,14 @@ const Form = ({
         <div className="w-full md:w-1/2 px-3 align-end">
           <label
             htmlFor="grid-title"
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          >
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
             Tags
           </label>
           <Tags
-            aTags={tags}
+            aTags={aTags}
             selected={selected}
             setSelected={setSelected}
             createTag={createTag}
-            onCreateOption={true}
           />
         </div>
       </div>
@@ -65,8 +62,7 @@ const Form = ({
         <div className="w-full  px-3 mb-6 md:mb-0">
           <label
             htmlFor="grid-content"
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          >
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
             Content
           </label>
           <textarea
@@ -77,15 +73,13 @@ const Form = ({
             placeholder="Content"
             className="appearance-none block w-full text-gray-700
             border border-gray-200 rounded py-3 px-4 leading-tight
-            focus:outline-none focus:bg-white focus:border-emerald-200 transition-colors"
-          ></textarea>
+            focus:outline-none focus:bg-white focus:border-emerald-200 transition-colors"></textarea>
         </div>
       </div>
       <div className="flex justify-end">
         <button
           className="bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2 px-4 rounded"
-          type="submit"
-        >
+          type="submit">
           Save
         </button>
       </div>

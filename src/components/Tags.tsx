@@ -42,7 +42,9 @@ const colourStyles: StylesConfig<Color, true> = {
   },
 
   multiValue: (styles, { data }) => {
-    const color = chroma(data.color);
+    // const color = chroma(data.color);
+    const color = data && data.color ? chroma(data.color) : chroma("gray");
+
     return {
       ...styles,
       backgroundColor: color.alpha(0.1).css(),
@@ -67,7 +69,6 @@ const SelectTags = ({
   createTag,
   selected,
   setSelected,
-  onCreateOption,
 }: SelectPropsTags) => {
   const options = aTags.map((tag) => ({
     value: tag.value,
@@ -75,10 +76,8 @@ const SelectTags = ({
     color: tag.color,
   }));
 
-  const inputValue = !onCreateOption ? "" : undefined;
-
   const handleCreateTag = (text: string) => {
-    if (onCreateOption !== false) {
+    if (!selected) {
       const newTag: Tag = {
         label: text.trim(),
         value: v4(),
@@ -86,6 +85,8 @@ const SelectTags = ({
       };
       createTag(newTag);
       setSelected([...selected, newTag]);
+    } else {
+      setSelected(aTags);
     }
   };
 
@@ -96,7 +97,6 @@ const SelectTags = ({
       styles={colourStyles}
       onChange={(selected) => setSelected(selected as Tag[])}
       onCreateOption={handleCreateTag}
-      inputValue={inputValue}
     />
   );
 };
