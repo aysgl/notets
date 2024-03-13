@@ -31,8 +31,7 @@ const Main = ({ notes, aTags, createTag }: MainPage) => {
         <Link to={"/new"}>
           <button
             className="flex items-center bg-emerald-500 hover:bg-emerald-400 text-white font-bold p-3 rounded"
-            type="submit"
-          >
+            type="submit">
             <Add size="20" color="#FFF" />
           </button>
         </Link>
@@ -42,8 +41,7 @@ const Main = ({ notes, aTags, createTag }: MainPage) => {
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               htmlFor="grid-title"
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            >
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Title
             </label>
             <input
@@ -57,8 +55,7 @@ const Main = ({ notes, aTags, createTag }: MainPage) => {
           <div className="w-full md:w-1/2 px-3 align-end">
             <label
               htmlFor="grid-title"
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            >
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Tags
             </label>
             <SelectTags
@@ -66,7 +63,6 @@ const Main = ({ notes, aTags, createTag }: MainPage) => {
               selected={selected}
               setSelected={setSelected}
               createTag={createTag}
-              onCreateOption={false}
             />
           </div>
         </div>

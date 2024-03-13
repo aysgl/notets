@@ -35,11 +35,10 @@ const Detail = ({ deleteNote }: DetailProps) => {
           <Markdown>{found.markdown}</Markdown>
         </div>
         <div className="px-6 pt-4 pb-2">
-          {found.tags.map((tag) => (
+          {found?.tags.map((tag) => (
             <span
               key={tag.value}
-              className="inline-block bg-emerald-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >
+              className="inline-block bg-emerald-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
               #{tag.label}
             </span>
           ))}

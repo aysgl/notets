@@ -11,7 +11,7 @@ const Form = ({
   markdown = "",
   aTags,
 }: CreateProps) => {
-  const [selected, setSelected] = useState<Tag[]>([tags]);
+  const [selected, setSelected] = useState<Tag[]>(tags);
   const navigate = useNavigate();
   const titleRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLTextAreaElement>(null);
@@ -25,6 +25,8 @@ const Form = ({
     });
     navigate("/");
   };
+
+  console.log(contentRef);
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-xxl mt-10">

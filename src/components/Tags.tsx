@@ -42,7 +42,6 @@ const colourStyles: StylesConfig<Color, true> = {
   },
 
   multiValue: (styles, { data }) => {
-    // const color = chroma(data.color);
     const color = data && data.color ? chroma(data.color) : chroma("gray");
 
     return {
@@ -76,6 +75,16 @@ const SelectTags = ({
     color: tag.color,
   }));
 
+  // Check if selected is an array before accessing its elements
+  const selectedArray =
+    Array.isArray(selected) && selected?.length > 0
+      ? selected?.map((item) => ({
+          value: item.value,
+          label: item.label,
+          color: item.color,
+        }))
+      : [];
+
   const handleCreateTag = (text: string) => {
     if (!selected) {
       const newTag: Tag = {
@@ -94,6 +103,7 @@ const SelectTags = ({
     <CreatableSelect
       isMulti
       options={options}
+      value={selected ? selectedArray : null}
       styles={colourStyles}
       onChange={(selected) => setSelected(selected as Tag[])}
       onCreateOption={handleCreateTag}
